@@ -37,8 +37,7 @@ Please make sure to update tests as appropriate.
 ## useful cmds
 
 ```
- npx webpack build --config ./bundlers/window/webpack.config.js --stats verbose
- npx webpack build --config ./bundlers/module/webpack.config.js --stats verbose
+ npx webpack build --config ./bundlers/webpack.config.js --stats verbose
  npx webpack
 
 Different Bundlers: 
