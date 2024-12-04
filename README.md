@@ -1,47 +1,131 @@
 # autoql-vanilla-wrapper
 
+`autoql-vanilla-wrapper` is a lightweight wrapper around the [react-autoql](https://www.npmjs.com/package/react-autoql) library. It allows you to integrate the powerful **DataMessenger** component into **vanilla JavaScript** applications without requiring a React setup. This package is ideal for users looking to embed **react-autoql**'s functionality into existing projects without migrating to React.
 
-Foobar is a Python library for dealing with word pluralization.
+---
+
+## Features
+
+- Seamlessly integrate `react-autoql` components into vanilla JavaScript apps.
+- Use the powerful **DataMessenger** component with minimal setup.
+- Fully supports **themes** and customization via `autoqlThemeObject`.
+
+---
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+To use this package, you need to have Node.js and npm installed. Then, install the package via:
 
 ```bash
-pip install foobar
+npm install autoql-vanilla-wrapper
 ```
 
-## Usage
+## Usage 
 
-```python
-import foobar
+## 1. Import the Wrapper in Your Vanilla JavaScript Application
 
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+```js
+import { renderDataMessenger } from 'autoql-vanilla-wrapper';
 ```
 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-
-## useful cmds
-
+## 2. Add a Target Container in Your HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autoql-vanilla-wrapper Example</title>
+  </head>
+  <body>
+    <div id="data-messenger-container"></div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
 ```
- npx webpack build --config ./bundlers/webpack.config.js --stats verbose
- npx webpack
 
-Different Bundlers: 
+## 3. Render the DataMessenger
 
-webpack, esbuild, or vite
+In your JavaScript file (e.g., index.js), use the renderDataMessenger function to initialize and render the DataMessenger.
 
+```js
+import { renderDataMessenger } from 'autoql-vanilla-wrapper';
+
+// Define configuration and options
+const autoqlConfig = {
+  targetElementId: 'data-messenger-container', // The HTML element where DataMessenger will render
+  autoqlThemeObject: {
+    theme: 'light',
+    font: 'Arial, sans-serif',
+    accentColor: '#26A7Df',
+    chartColors: ['#26A7E9', '#A5CD39', '#DD6A6A', '#FFA700', '#00C1B2'],
+  },
+  authentication: {
+    token: 'YOUR_API_TOKEN_HERE',
+    domain: 'https://your-api-domain.com',
+    apiKey: 'YOUR_API_KEY',
+  },
+};
+
+// Render the DataMessenger
+const appRef = renderDataMessenger(autoqlConfig);
+
+// Optionally interact with the appRef to control the component programmatically
+appRef.current?.openDrawer();
 ```
+
+## Props for `renderDataMessenger`
+
+### Required Props
+
+| Name              | Type     | Description                                                                 |
+|-------------------|----------|-----------------------------------------------------------------------------|
+| `targetElementId` | `string` | The ID of the DOM element where the DataMessenger will be mounted.          |
+| `authentication`  | `object` | Contains `token` and `domain` required to authenticate with `react-autoql`. |
+
+
+## Example
+Here's an example of a complete setup:
+
+```html 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autoql-vanilla-wrapper Example</title>
+  </head>
+  <body>
+    <h1>DataMessenger Example</h1>
+    <div id="data-messenger-container"></div>
+    <script type="module">
+      import { renderDataMessenger } from 'autoql-vanilla-wrapper';
+
+      const autoqlConfig = {
+        targetElementId: 'data-messenger-container',
+        autoqlThemeObject: {
+          theme: 'dark',
+          accentColor: '#FF5733',
+        },
+        authentication: {
+          token: 'YOUR_API_TOKEN_HERE',
+          domain: 'https://your-api-domain.com',
+          apiKey: 'YOUR_API_KEY',
+        },
+      };
+
+      renderDataMessenger(autoqlConfig);
+    </script>
+  </body>
+</html>
+```
+
+## License
+
+This package is licensed under the ISC License.
+
+## Support
+
+If you have any questions or need help, feel free to open an issue in this repository or contact us directly.
+
+Happy coding!

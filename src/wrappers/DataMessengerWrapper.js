@@ -4,7 +4,6 @@ import { DataMessenger, configureTheme } from 'react-autoql';
 import 'react-autoql/dist/autoql.esm.css'
 
 const DataMessengerWrapper = ({ dmRef, autoqlThemeObject = {}, ...props }) => {
-
   if (autoqlThemeObject) {
     configureTheme({
       theme: autoqlThemeObject?.theme ?? 'light',
@@ -37,7 +36,6 @@ export function renderDataMessenger(props = {}) {
   }
 
   const dmRef = React.createRef();
-  const root = ReactDOM.createRoot(container);
-  root.render(<DataMessengerWrapper dmRef={dmRef} {...props} />);
+  ReactDOM.render(<DataMessengerWrapper dmRef={dmRef} {...props} />, container);
   return dmRef;
 };
