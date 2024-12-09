@@ -54,12 +54,6 @@ import { renderDataMessenger } from 'autoql-vanilla-wrapper';
 // Define configuration and options
 const autoqlConfig = {
   targetElementId: 'data-messenger-container', // The HTML element where DataMessenger will render
-  autoqlThemeObject: {
-    theme: 'light',
-    font: 'Arial, sans-serif',
-    accentColor: '#26A7Df',
-    chartColors: ['#26A7E9', '#A5CD39', '#DD6A6A', '#FFA700', '#00C1B2'],
-  },
   authentication: {
     token: 'YOUR_API_TOKEN_HERE',
     domain: 'https://your-api-domain.com',
@@ -103,10 +97,6 @@ Here's an example of a complete setup:
 
       const autoqlConfig = {
         targetElementId: 'data-messenger-container',
-        autoqlThemeObject: {
-          theme: 'dark',
-          accentColor: '#FF5733',
-        },
         authentication: {
           token: 'YOUR_API_TOKEN_HERE',
           domain: 'https://your-api-domain.com',
