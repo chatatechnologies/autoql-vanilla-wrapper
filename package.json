@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-autoql": "8.8.51",
+    "react-autoql": "^8.8.54",
     "react-dom": "^17.0.2"
   }
 }
