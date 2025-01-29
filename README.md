@@ -22,7 +22,9 @@ npm install autoql-vanilla-wrapper
 
 ## Usage 
 
-## 1. Import the Wrapper in Your Vanilla JavaScript Application
+## DataMessenger Wrapper
+
+## 1. Import the DataMessenger Wrapper in Your Vanilla JavaScript Application
 
 ```js
 import { renderDataMessenger } from 'autoql-vanilla-wrapper';
@@ -35,7 +37,7 @@ import { renderDataMessenger } from 'autoql-vanilla-wrapper';
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>autoql-vanilla-wrapper Example</title>
+    <title>autoql-vanilla-wrapper DataMessenger Example</title>
   </head>
   <body>
     <div id="data-messenger-container"></div>
@@ -62,10 +64,10 @@ const autoqlConfig = {
 };
 
 // Render the DataMessenger
-const appRef = renderDataMessenger(autoqlConfig);
+const dataMessengerRef = renderDataMessenger(autoqlConfig);
 
-// Optionally interact with the appRef to control the component programmatically
-appRef.current?.openDrawer();
+// Optionally interact with the dataMessengerRef to control the component programmatically
+dataMessengerRef.current?.openDrawer();
 ```
 
 ## Props for `renderDataMessenger`
@@ -87,7 +89,7 @@ Here's an example of a complete setup:
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>autoql-vanilla-wrapper Example</title>
+    <title>autoql-vanilla-wrapper DataMessenger Example</title>
   </head>
   <body>
     <h1>DataMessenger Example</h1>
@@ -105,6 +107,99 @@ Here's an example of a complete setup:
       };
 
       renderDataMessenger(autoqlConfig);
+    </script>
+  </body>
+</html>
+```
+
+## Dashboard Wrapper
+
+## 1. Import the Dashboard Wrapper in Your Vanilla JavaScript Application
+
+```js
+import { renderDashboard } from 'autoql-vanilla-wrapper';
+```
+
+## 2. Add a Target Container in Your HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autoql-vanilla-wrapper Dashboard Example</title>
+  </head>
+  <body>
+    <div id="dashboard-container"></div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
+```
+
+## 3. Render the DataMessenger
+
+In your JavaScript file (e.g., index.js), use the renderDashboard function to initialize and render the Dashboard.
+
+```js
+import { renderDashboard } from 'autoql-vanilla-wrapper';
+
+// Define configuration and options
+const autoqlConfig = {
+  targetElementId: 'dashboard-container', // The HTML element where Dashboard will render
+  authentication: {
+    token: 'YOUR_API_TOKEN_HERE',
+    domain: 'https://your-api-domain.com',
+    apiKey: 'YOUR_API_KEY',
+  },
+  dashboardTiles: [], // Array of dashboard tiles 
+};
+
+// Render the Dashboard
+const dashboardRef = renderDashboard(autoqlConfig);
+
+// Optionally interact with the dashboardRef to control the component programmatically
+dashboardRef.current?.executeDashboard();
+```
+
+## Props for `renderDashboard`
+
+### Required Props
+
+| Name              | Type     | Description                                                                 |
+|-------------------|----------|-----------------------------------------------------------------------------|
+| `targetElementId` | `string` | The ID of the DOM element where the DataMessenger will be mounted.          |
+| `authentication`  | `object` | Contains `token` and `domain` required to authenticate with `react-autoql`. |
+| `dashboardTiles`  | `array`  | Array of dashboard tiles fetched from AutoQL API.                           |
+
+
+## Example
+Here's an example of a complete setup:
+
+```html 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autoql-vanilla-wrapper Dashboard Example</title>
+  </head>
+  <body>
+    <h1>Dashboard Example</h1>
+    <div id="dashboard-container"></div>
+    <script type="module">
+      import { renderDashboard } from 'autoql-vanilla-wrapper';
+
+      const autoqlConfig = {
+        targetElementId: 'data-messenger-container',
+        authentication: {
+          token: 'YOUR_API_TOKEN_HERE',
+          domain: 'https://your-api-domain.com',
+          apiKey: 'YOUR_API_KEY',
+        },
+        dashboardTiles: []
+      };
+
+      renderDashboard(autoqlConfig);
     </script>
   </body>
 </html>
