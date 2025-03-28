@@ -7,7 +7,7 @@ module.exports = [
     entry: './src/index.js',
     output: {
       filename: 'autoql-vanilla-wrapper.cjs.js', // Output file for CommonJS
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'dist/cjs'),
       libraryTarget: 'commonjs2', // Export as CommonJS
       clean: true, // Clean output directory before each build
     },
@@ -45,7 +45,7 @@ module.exports = [
     entry: './src/index.js',
     output: {
       filename: 'autoql-vanilla-wrapper.esm.js', // Output file for ES Module
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'dist/esm'),
       library: {
         type: 'module', // Export as ES Module
       },

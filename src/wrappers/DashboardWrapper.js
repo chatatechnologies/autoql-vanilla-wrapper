@@ -41,7 +41,7 @@ export function renderDashboard(props = {}) {
   const container = document.getElementById(props.targetElementId);
 
   if (!container) {
-    console.error('Target container not found!');
+    console.error('Dashboard target container not found!');
     return;
   }
 
