@@ -1,6 +1,6 @@
 {
   "name": "autoql-vanilla-wrapper",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Vanilla Wrapper for AutoQL React Widget Library",
   "main": "dist/autoql-vanilla-wrapper.cjs.js",
   "module": "dist/autoql-vanilla-wrapper.esm.js",
