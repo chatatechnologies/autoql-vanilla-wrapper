@@ -17,7 +17,7 @@ export function renderDataMessenger(props = {}) {
   const container = document.getElementById(props.targetElementId);
 
   if (!container) {
-    console.error('Target container not found!');
+    console.error('DataMessenger target container not found!');
     return;
   }
 
