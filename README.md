@@ -6,7 +6,7 @@
 
 ## 🚀 Features
 
-- Use powerful components like **DataMessenger**, **Dashboards**, **Query Input**, **Query Output**, **VizToolbar**, and **OptionsToolbar** in plain JavaScript.
+- Use powerful components like **DataMessenger**, **Dashboards**, **Data Alerts**, **Data Alerts Modal**, **Chat Content**,**Query Input**, **Query Output**, **VizToolbar**, and **OptionsToolbar** in plain JavaScript.
 - Supports theming and easy customization via `configureTheme`.
 - Minimal setup, flexible integration.
 - Supports all props and callbacks from the original react-autoql components.
@@ -30,6 +30,9 @@ npm install autoql-vanilla-wrapper
 import {
   renderDataMessenger,
   renderDashboard,
+  renderDataAlerts,
+  renderDataAlertsModal,
+  renderChatContent,
   renderQueryInput,
   renderQueryOutput,
   renderVizToolbar,
@@ -74,6 +77,43 @@ renderDashboard({
   authentication,
   dashboardTiles: [], // array of dashboard tile configs
   targetElementId: 'dashboard-container',
+});
+```
+
+### `renderDataAlerts`
+
+Mounts the DataAlerts container in a target element.
+
+```js
+renderDataAlerts({
+  authentication,
+  targetElementId: 'data-alerts-container',
+});
+```
+
+### `renderDataAlertsModel`
+
+Mounts the DataAlertsModal in a target element.
+
+```js
+renderDataAlertsModal({
+  authentication,
+  targetElementId: 'data-alerts-modal-container',
+  isVisible: true,
+  onClose: () => {
+    // handle modal close
+  }
+});
+```
+
+### `renderChatContent`
+
+Mounts the Chat Content in a target element. This component implements the QueryInput and QueryOutput components in a simple, bare-bones container.
+
+```js
+renderChatContent({
+  authentication,
+  targetElementId: 'chat-content-container',
 });
 ```
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { OptionsToolbar } from 'react-autoql';
-import 'react-autoql/dist/autoql.esm.css'
 
 const OptionsToolbarWrapper = ({ optionsToolbarRef, responseRef, ...props }) => {
 

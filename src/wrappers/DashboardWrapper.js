@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Dashboard } from 'react-autoql';
-import 'react-autoql/dist/autoql.esm.css'
 
 const DashboardWrapper = ({ dashboardRef, ...props }) => {
   const [tiles, setTiles] = React.useState([]);

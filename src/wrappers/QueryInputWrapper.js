@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { QueryInput } from 'react-autoql';
-import 'react-autoql/dist/autoql.esm.css'
 
 const QueryInputWrapper = ({ queryInputRef, ...props }) => {
 
