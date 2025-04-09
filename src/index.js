@@ -11,3 +11,5 @@ export { renderOptionsToolbar } from './wrappers/OptionsToolbarWrapper.js';
 export { renderChatContent } from './wrappers/ChatContentWrapper.js';
 export { renderDataAlertsModal } from './wrappers/DataAlertsModalWrapper.js';
 export { renderDataAlerts } from './wrappers/DataAlertsWrapper.js';
+export { renderNotificationIcon } from './wrappers/NotificationIconWrapper.js';
+export { renderNotificationFeed } from './wrappers/NotificationFeedWrapper.js';
