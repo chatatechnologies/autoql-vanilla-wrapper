@@ -1,0 +1,5 @@
+/* Override perfect-scrollbar defaults for query suggestion buttons */
+.query-suggestions-buttons-wrapper.scrollbar-container {
+  position: static !important;
+  height: auto !important;
+}
