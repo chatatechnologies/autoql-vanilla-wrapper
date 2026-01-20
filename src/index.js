@@ -1,5 +1,6 @@
 import { configureTheme as configureThemeUtils } from 'react-autoql';
 import 'react-autoql/dist/autoql.esm.css'
+import './overrides.css'
 
 export const configureTheme = (customThemeConfig) => configureThemeUtils(customThemeConfig);
 export { renderDataMessenger } from './wrappers/DataMessengerWrapper.js';
