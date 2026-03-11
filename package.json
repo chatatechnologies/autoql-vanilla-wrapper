@@ -2,13 +2,21 @@
   "name": "autoql-vanilla-wrapper",
   "version": "1.4.0",
   "description": "Vanilla Wrapper for AutoQL React Widget Library",
-  "main": "dist/autoql-vanilla-wrapper.cjs.js",
-  "module": "dist/autoql-vanilla-wrapper.esm.js",
+  "main": "dist/cjs/autoql-vanilla-wrapper.cjs.js",
+  "module": "dist/esm/autoql-vanilla-wrapper.esm.js",
+  "style": "dist/autoql-vanilla-wrapper.css",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/autoql-vanilla-wrapper.cjs.js",
+      "import": "./dist/esm/autoql-vanilla-wrapper.esm.js"
+    },
+    "./styles.css": "./dist/autoql-vanilla-wrapper.css"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "npx webpack",
+    "build": "npx webpack && node scripts/build-css.js",
     "prepare": "npx rimraf dist && npm run build",
     "prepublishOnly": "npx rimraf dist && npm run build"
   },
@@ -37,7 +45,7 @@
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-autoql": "8.21.1"
+    "react-autoql": "8.26.7",
+    "react-dom": "^17.0.2"
   }
 }

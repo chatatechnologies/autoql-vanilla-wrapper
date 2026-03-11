@@ -27,6 +27,7 @@ npm install autoql-vanilla-wrapper
 ### 1. Import Components
 
 ```js
+import 'autoql-vanilla-wrapper/styles.css';
 import {
   renderDataMessenger,
   renderDashboard,
@@ -40,6 +41,14 @@ import {
   configureTheme,
 } from 'autoql-vanilla-wrapper'; || 'https://cdn.chata.io/autoql-vanilla-wrapper/vX.Y.Z/autoql-vanilla-wrapper.esm.js';
 ```
+
+For non-bundled environments (e.g. script/CDN usage), load the stylesheet explicitly:
+
+```html
+<link rel="stylesheet" href="https://cdn.chata.io/autoql-vanilla-wrapper/vX.Y.Z/autoql-vanilla-wrapper.css" />
+```
+
+Load this stylesheet after framework/global CSS (Bootstrap, Tailwind, Blazor site CSS) so widget rules are not overridden.
 
 ### 2. Set Up Authentication
 
